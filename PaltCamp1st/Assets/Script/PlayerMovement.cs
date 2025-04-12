@@ -30,4 +30,24 @@ public class PlayerMovement : MonoBehaviour
         // 이동 지역 변수
         transform.position = targetPosition;
     }
+
+
+    private void OnTriggerEnter(Collider other) // 오브젝트 간 닿았을 때 (태그 특정 가능)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            //Debug.Log("Enemy gg");
+
+        }
+
+        Debug.Log(other.gameObject.name);
+    }
+
+    private void OnTriggerExit(Collider other) // 오브젝트 간 떨어졌을 때 (태그 특정 가능)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            Debug.Log("Enemy bye");
+        }
+    }
 }
